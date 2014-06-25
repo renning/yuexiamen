@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>crawl system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{static_url("css/bootstrap.css")}}" rel="stylesheet" media="screen">
+    <link href="{{static_url("css/crawl.css")}}" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="{{static_url("js/jquery.min.js")}}" ></script>
+
+    <script type="text/javascript" src="{{static_url("js/jquery.crawl.js")}}" ></script>
+  </head>
+  <body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">SPIDER</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">主页</a></li>
+              <li><a href="#about">热文</a></li>
+              <li><a href="#about">发现</a></li>
+              <li><a href="#contact">订制</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+        <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+                <li class="nav-header">FEED</li>
+                <li class="active"><a href="/rssrule/">制作</a></li>
+                <li><a href="#">管理</a></li>
+                <li class="nav-header">正文提取规则</li>
+                <li><a href="/pagerule/read/">制作</a></li>
+                <li><a href="#">管理</a></li>
+                <!--<li class="nav-header"></li>-->
+                <!--<li><a href="#">Link</a></li>-->
+                <!--<li><a href="#">Link</a></li>-->
+                <!--<li><a href="#">Link</a></li>-->
+            </ul>
+            </div><!--/.well -->
+        </div><!--/span-->
+        {% block span %} {% end %}
+      </div>
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+    <script src="{{static_url("js/bootstrap.min.js")}}"></script>
+  </body>
+</html>

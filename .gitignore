@@ -1,0 +1,8 @@
+*.pyc
+*.path
+*.log.*
+model.cp*
+*.rdb
+nohup.out
+*.log
+.rope*

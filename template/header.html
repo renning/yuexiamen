@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>目的地管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{static_url("css/crawl.css")}}" rel="stylesheet" media="screen">
+    <link href="{{static_url("css/bootstrap.min.css")}}" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">目的地管理系统</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+                欢迎使用！
+              <!--Logged in as <a href="#" class="navbar-link">Username</a>-->
+            </p>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    {% block body%} {% end %}
+      <hr>
+
+
+    </div><!--/.fluid-container-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{static_url("js/bootstrap.min.js")}}"></script>
+  </body>
+</html>
