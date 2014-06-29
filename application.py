@@ -3,6 +3,7 @@
 import tornado.web
 import os
 from handler.login import *
+from handler.mudidi import *
 import Settings
 
 class Application(tornado.web.Application):
@@ -11,6 +12,9 @@ class Application(tornado.web.Application):
             (r"/", MainHandler),
             (r"/auth/login/", AuthLoginHandler),
             (r"/auth/logout/", AuthLogoutHandler),
+            (r"/auth/logout/", AuthLogoutHandler),
+            (r"/auth/logout/", AuthLogoutHandler),
+            (r"/mudidi/", MudidiHandler),
         ]
         settings = {
             "template_path":Settings.TEMPLATE_PATH,
