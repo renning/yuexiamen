@@ -1,26 +1,36 @@
 #coding: utf-8
+import sys
+reload(sys)
 from crawlsystem.model.DB import DB
 from crawlsystem.extractwork.utils import *
 from config import DBCONFIG
-def writeRuleInfo(info):
-    sqlstring = "INSERT INTO crawlsystem.crawl_url_extract_info (domain, name, url_example, url_regular, crawl_info) VALUES (%(domain)s,%(name)s,%(url_example)s, %(url_regular)s, %(crawl_info)s)"
+sys.setdefaultencoding('utf-8')
+def writePlaceInfo(info):
+    print info
+    sqlstring = "INSERT INTO yuexiamen.pre_place (name, area, areaid, placetype, address, phone, introduction, site, price, traffic, businesshours, createtime,parentplaceid, parentplacename ) VALUES (%(name)s, %(area)s, %(areaid)s, %(placetype)s, %(address)s, %(phone)s, %(introduction)s, %(site)s, %(price)s, %(traffic)s, %(businesshours)s, %(createtime)s, %(parentplaceid)s, %(parentplacename)s)"
     res = DB(**DBCONFIG).insert(sqlstring, info)
     return res
 
 
-def writeRssInfo(info):
-    sqlstring = "INSERT INTO crawlsystem.crawl_rss_extract_info (name, url, crawl_info) VALUES (%(name)s,%(url)s,  %(crawl_info)s)"
-    res = DB(**DBCONFIG).insert(sqlstring, info)
-    return res
-
-
-def readRssInfo(string):
-    if string:
-        sqlstring = "SELECT * FROM crawlsystem.crawl_rss_extract_info WHERE CONCAT（name, url） LIKE '%%%s%%'" % string
-    else:
-        sqlstring = "SELECT * FROM crawlsystem.crawl_rss_extract_info"
+def readProInfo():
+    sqlstring = "SELECT * FROM yuexiamen.pre_province"
     data = DB(**DBCONFIG).query(sqlstring)
     return data
+
+
+def readAreaInfo():
+    sqlstring = "SELECT * FROM yuexiamen.pre_area"
+    data = DB(**DBCONFIG).query(sqlstring)
+    return data
+
+
+def readPlaceInfo(id):
+    sqlstring = "SELECT * FROM yuexiamen.pre_place where areaid=%s order by createtime desc" % id
+    data = DB(**DBCONFIG).query(sqlstring)
+    return data
+
+
+
 
 
 def getCrawlInfo(url):

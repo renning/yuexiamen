@@ -12,13 +12,13 @@ print os.getcwd(), os.path.abspath(os.path.dirname(__file__))
 #mongodb and redis config
 if os.path.exists('thisistest.path'):
     DBCONFIG = dict(
-        DB_HOST = '192.168.1.145',
-        #DB_HOST = '127.0.0.1',
+        #DB_HOST = '192.168.1.145',
+        DB_HOST = '127.0.0.1',
         DB_PORT = 3306,
-        #DB_USER = 'root',
-        #DB_PWD = 'yegezi')
-        DB_USER = 'writer',
-        DB_PWD = 'xianguo_micblog')
+        DB_USER = 'root',
+        DB_PWD = 'yegezi')
+        #DB_USER = 'writer',
+        #DB_PWD = 'xianguo_micblog')
 
     #connection = pymongo.Connection('localhost', 27017, 100)
     #db = web.database(host='211.151.83.16', dbn='mysql',

@@ -15,6 +15,10 @@ class Application(tornado.web.Application):
             (r"/auth/logout/", AuthLogoutHandler),
             (r"/auth/logout/", AuthLogoutHandler),
             (r"/mudidi/", MudidiHandler),
+            (r"/poi/add/(\d+)/(.*)/(\d+)/(.*)/", ChildPoiAddHandler),
+            (r"/poi/add/(\d+)/(.*)/", PoiAddHandler),
+            (r"/poi/(\d+)/(.*)/", PoiHandler),
+            #(r"/poi/(\d+)/(.*)/", PoiHandler),
         ]
         settings = {
             "template_path":Settings.TEMPLATE_PATH,
