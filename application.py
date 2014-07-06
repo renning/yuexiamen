@@ -15,9 +15,12 @@ class Application(tornado.web.Application):
             (r"/auth/logout/", AuthLogoutHandler),
             (r"/auth/logout/", AuthLogoutHandler),
             (r"/mudidi/", MudidiHandler),
-            (r"/poi/add/(\d+)/(.*)/(\d+)/(.*)/", ChildPoiAddHandler),
-            (r"/poi/add/(\d+)/(.*)/", PoiAddHandler),
+            (r"/add/place/(\d+)/(.*)/(\d+)/(.*)/", ChildPoiAddHandler),
+            (r"/add/place/(\d+)/(.*)/", PlaceAddHandler),
+            (r"/add/poi/(\d+)/(.*)/", PoiAddHandler),
+            (r"/poiadmin/(\d+)/(.*)/", PoiadminHandler),
             (r"/poi/(\d+)/(.*)/", PoiHandler),
+            (r"/place/(\d+)/(.*)/", PlaceHandler),
             #(r"/poi/(\d+)/(.*)/", PoiHandler),
         ]
         settings = {

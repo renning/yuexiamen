@@ -1,0 +1,103 @@
+{% extends "sidebar.html" %}
+
+{% block span %} 
+<div class="span10">
+    <form class="form-horizontal" method="post"　enctype="mutilpart/form-data">
+        <div class="control-group">
+            <label class="control-label " >*所属目的地</label>
+            <div class="controls">
+            <input class="span5" type="text" id="area" name="area" value="{{name}}">
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >*名称</label>
+            <div class="controls">
+            <input type="text" class="span5" id="name" name="placename" >
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" >*类型</label>
+                <div class="controls">
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox1" value="1"> 餐厅
+                </label>
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox2" value="2"> 景点
+                </label>
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox3" value="3"> 购物
+                </label>
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox3" value="4"> 娱乐
+                </label>
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox3" value="5"> 交通
+                </label>
+                </div>
+            </label>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >*上传图片</label>
+            <div class="controls">
+            <input type="file" class="span5" id="img" name="img" >
+            </div>
+        </div>
+       <div class="control-group">
+            <label class="control-label" >*地址</label>
+            <div class="controls">
+            <input type="text" class="span5" id="address" name="address" >
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >电话</label>
+            <div class="controls">
+            <input type="text" class="span5" id="phone" name="phone">
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >*简介</label>
+            <div class="controls">
+            <textarea class="span5" rows="5" type="text" id="introduction" name="introduction" ></textarea>
+            </div>
+        </div>
+       <div class="control-group">
+            <label class="control-label" >网址</label>
+            <div class="controls">
+            <input type="text" class="span5" id="site" name="site" >
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >价格</label>
+            <div class="controls">
+            <input type="text" class="span5" id="price" name="price" >
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >到达交通</label>
+            <div class="controls">
+                <textarea class="span5" rows="5" type="text" id="traffic" name="traffic" ></textarea>
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >开放时间</label>
+            <div class="controls">
+                <textarea class="span5" rows="5" type="text" id="businesshours" name="businesshours" ></textarea>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% end %}

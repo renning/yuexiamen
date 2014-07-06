@@ -1,0 +1,10 @@
+{% extends "sidebar.html" %}
+
+{% block span %} 
+<div class="span10">
+    <a class='btn btn-large btn-primary' href="/add/place/{{id}}/{{name}}/">新增地点</a>
+    <a class='btn btn-large btn-primary' href="/add/poi/{{id}}/{{name}}/">新增景区</a>
+    <a class='btn btn-large btn-primary' href="/place/{{id}}/{{name}}/">查看地点</a>
+    <a class='btn btn-large btn-primary' href="/poi/{{id}}/{{name}}/">查看景区</a>
+</div>
+{% end %}
