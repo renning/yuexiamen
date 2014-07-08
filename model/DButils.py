@@ -12,6 +12,12 @@ def writePlaceInfo(info):
     return res
 
 
+def writePoiInfo(info):
+    sqlstring = "INSERT INTO yuexiamen.pre_poi (name, area, areaid, introduction, createtime ) VALUES (%(name)s, %(area)s, %(areaid)s,  %(introduction)s, %(createtime)s)"
+    res = DB(**DBCONFIG).insert(sqlstring, info)
+    return res
+
+
 def readProInfo():
     sqlstring = "SELECT * FROM yuexiamen.pre_province"
     data = DB(**DBCONFIG).query(sqlstring)
@@ -28,6 +34,12 @@ def readPlaceInfo(id):
     sqlstring = "SELECT * FROM yuexiamen.pre_place where areaid=%s order by createtime desc" % id
     data = DB(**DBCONFIG).query(sqlstring)
     return data
+
+def readPoiInfo(id):
+    sqlstring = "SELECT * FROM yuexiamen.pre_poi where areaid=%s order by createtime desc" % id
+    data = DB(**DBCONFIG).query(sqlstring)
+    return data
+
 
 
 

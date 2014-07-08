@@ -2,25 +2,12 @@
 
 {% block span %} 
 <div class="span10">
-    <a class='btn btn-large btn-primary' href="/add/place/{{id}}/{{name}}/">新增地点</a>
-    <a class='btn btn-large btn-primary' href="/add/poi/{{id}}/{{name}}/">新增景区</a>
-    <a class='btn btn-large btn-primary' href="/add/{{id}}/{{name}}/">查看地点</a>
-    <a class='btn btn-large btn-primary' href="/add/{{id}}/{{name}}/">查看景区</a>
-
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>#</th>
                   <th>名称</th>
-                  <th>类型</th>
-                  <th>地址</th>
-                  <th>电话</th>
                   <th>简介</th>
-                  <th>网址</th>
-                  <th>价格</th>
-                  <th>到达交通</th>
-                  <th>开放时间</th>
-                  <th>上级景点</th>
                   <th>创建时间</th>
                   <th>操作</th>
                 </tr>
@@ -31,20 +18,10 @@
                     <tr>
                         <td>{{num + 1}}</td>
                         <td>{{item['name']}}</td>
-                        <td>{{item['placetype']}}</td>
-                        <td>{{item['address']}}</td>
-                        <td>{{item['phone']}}</td>
                         <td>{{item['introduction']}}</td>
-                        <td>{{item['site']}}</td>
-                        <td>{{item['price']}}</td>
-                        <td>{{item['traffic']}}</td>
-                        <td>{{item['businesshours']}}</td>
-                        <td>{{item['parentplacename']}}</td>
                         <td>{{item['createtime']}}</td>
                         <td><a href="/poi/edit/{{id}}/{{name}}/">编辑</a>  
-                        {% if not item['parentplacename'] %} 
-                                |<a href="/poi/add/{{id}}/{{name}}/{{item['id']}}/{{item['name']}}/" >新增</a></td>
-                        {% end%}
+                                |<a href="/add/place/{{id}}/{{name}}/{{item['id']}}/{{item['name']}}/" >新增</a></td>
                     </tr>
                 {% end %}
               </tbody>

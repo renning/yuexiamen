@@ -2,10 +2,6 @@
 
 {% block span %} 
 <div class="span10">
-    <a class='btn btn-large btn-primary' href="/add/place/{{id}}/{{name}}/">新增地点</a>
-    <a class='btn btn-large btn-primary' href="/add/poi/{{id}}/{{name}}/">新增景区</a>
-    <a class='btn btn-large btn-primary' href="/add/{{id}}/{{name}}/">查看地点</a>
-    <a class='btn btn-large btn-primary' href="/add/{{id}}/{{name}}/">查看景区</a>
 
             <table class="table table-striped">
               <thead>
@@ -20,7 +16,7 @@
                   <th>价格</th>
                   <th>到达交通</th>
                   <th>开放时间</th>
-                  <th>上级景点</th>
+                  <th>所属景区</th>
                   <th>创建时间</th>
                   <th>操作</th>
                 </tr>
@@ -42,9 +38,6 @@
                         <td>{{item['parentplacename']}}</td>
                         <td>{{item['createtime']}}</td>
                         <td><a href="/poi/edit/{{id}}/{{name}}/">编辑</a>  
-                        {% if not item['parentplacename'] %} 
-                                |<a href="/poi/add/{{id}}/{{name}}/{{item['id']}}/{{item['name']}}/" >新增</a></td>
-                        {% end%}
                     </tr>
                 {% end %}
               </tbody>
