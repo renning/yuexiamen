@@ -1,0 +1,33 @@
+{% extends "sidebar.html" %}
+
+{% block span %} 
+<div class="span10">
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>名称</th>
+                  <th>类型</th>
+                  <th>简介</th>
+                  <th>创建时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {% for num, item in enumerate(items) %}
+                    <tr>
+                        <td>{{num + 1}}</td>
+                        <td>{{item['name']}}</td>
+                        <td>{{item['placetype']}}</td>
+                        <td>{{item['introduction']}}</td>
+                        <td>{{item['createtime']}}</td>
+                        <td><a href="/featured/edit/{{id}}/{{name}}/">编辑</a>  
+                    </tr>
+                {% end %}
+              </tbody>
+            </table>
+
+</div>
+                {% end %}

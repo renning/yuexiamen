@@ -18,6 +18,8 @@ class Application(tornado.web.Application):
             (r"/add/place/(\d+)/(.*)/(\d+)/(.*)/", ChildPlaceAddHandler),
             (r"/add/place/(\d+)/(.*)/", PlaceAddHandler),
             (r"/add/poi/(\d+)/(.*)/", PoiAddHandler),
+            (r"/add/featured/(\d+)/(.*)/", FeaturedAddHandler),
+            (r"/add/raiders/(\d+)/(.*)/", RaidersAddHandler),
             (r"/poiadmin/(\d+)/(.*)/", PoiadminHandler),
             (r"/poi/(\d+)/(.*)/", PoiHandler),
             (r"/place/(\d+)/(.*)/", PlaceHandler),

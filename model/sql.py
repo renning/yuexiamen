@@ -129,3 +129,61 @@ CREATE TABLE `pre_poi` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `pre_raiders_food` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(245) DEFAULT NULL,
+  `areaid` int(11) DEFAULT NULL,
+  `poiid` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `introduction` text,
+  `subitem` text,
+  `type` int(2),
+  `createtime` int(12) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `pre_raiders_shopping` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(245) DEFAULT NULL,
+  `areaid` int(11) DEFAULT NULL,
+  `poiid` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `introduction` text,
+  `subitem` text,
+  `type` int(2),
+  `createtime` int(12) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+CREATE TABLE `pre_raiders_entertainment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(245) DEFAULT NULL,
+  `areaid` int(11) DEFAULT NULL,
+  `poiid` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `introduction` text,
+  `subitem` text,
+  `createtime` int(12) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+CREATE TABLE `pre_featured_goods` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(245) DEFAULT NULL,
+  `areaid` int(11) DEFAULT NULL,
+  `poiid` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `introduction` text,
+  `createtime` int(12) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+CREATE TABLE `pre_featured_food` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(245) DEFAULT NULL,
+  `areaid` int(11) DEFAULT NULL,
+  `poiid` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `introduction` text,
+  `createtime` int(12) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+

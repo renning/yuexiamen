@@ -91,6 +91,43 @@ class PoiAddHandler(tornado.web.RequestHandler):
         items = DButils.readPoiInfo(areaid)
         self.render('poi.html', items=items, id=areaid, name=area,)
 
+class FeaturedAddHandler(tornado.web.RequestHandler):
+    def get(self, id, name):
+        print id, name
+        return self.render('addfeature.html', id=id, name=name)
+
+    def post(self,areaid, area):
+        name = self.get_argument('placename')
+        introduction = self.get_argument('introduction')
+        info = dict(name=name,
+                    area=area,
+                    areaid=areaid,
+                    introduction=introduction,
+                    createtime=time.time(),
+                    )
+        DButils.writePoiInfo(info)
+        items = DButils.readPoiInfo(areaid)
+        self.render('feature.html', items=items, id=areaid, name=area,)
+
+class RaidersAddHandler(tornado.web.RequestHandler):
+    def get(self, id, name):
+        print id, name
+        return self.render('addraiders.html', id=id, name=name)
+
+    def post(self,areaid, area):
+        name = self.get_argument('placename')
+        introduction = self.get_argument('introduction')
+        info = dict(name=name,
+                    area=area,
+                    areaid=areaid,
+                    introduction=introduction,
+                    createtime=time.time(),
+                    )
+        DButils.writePoiInfo(info)
+        items = DButils.readPoiInfo(areaid)
+        self.render('raiders.html', items=items, id=areaid, name=area,)
+
+
 
 class ChildPlaceAddHandler(tornado.web.RequestHandler):
     def get(self, id1,name1,  id2, name2):

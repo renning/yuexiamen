@@ -1,0 +1,53 @@
+{% extends "sidebar.html" %}
+
+{% block span %} 
+<div class="span10">
+    <form class="form-horizontal" method="post"　enctype="mutilpart/form-data">
+        <div class="control-group">
+            <label class="control-label " >*所属目的地</label>
+            <div class="controls">
+            <input class="span5" type="text" id="area" name="area" value="{{name}}">
+            </div>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >*名称</label>
+            <div class="controls">
+            <input type="text" class="span5" id="name" name="placename" >
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" >*类型</label>
+                <div class="controls">
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox1" value="1"> 购物
+                </label>
+                <label class="radio inline">
+                    <input type="radio" name="type" id="inlineCheckbox2" value="2"> 美食
+                </label>
+                </div>
+            </label>
+        </div>
+
+       <div class="control-group">
+            <label class="control-label" >*上传图片</label>
+            <div class="controls">
+            <input type="file" class="span5" id="img" name="img" >
+            </div>
+        </div>
+       <div class="control-group">
+            <label class="control-label" >*简介</label>
+            <div class="controls">
+            <textarea class="span5" rows="5" type="text" id="introduction" name="introduction" ></textarea>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% end %}
